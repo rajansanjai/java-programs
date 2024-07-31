@@ -1,0 +1,60 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        int k=0,b,exp=10;
+        Scanner sc=new Scanner(System.in);
+        int x=sc.nextInt();
+        int[] a=new int[(int)Math.log10(x)+1];
+        while(x!=0){
+            b=x%10;
+            a[k]=b;
+            k++;
+            x=x/10;
+        }
+        int temp;
+        for(int i=0;i<a.length;i++){
+            for(int e=i;e<a.length;e++){
+            if((a[i]<a[e])) //1<2
+            {
+                temp=a[i];
+                a[i]=a[e];
+                a[e]=temp;
+            }
+        }
+        }
+       int[] c=new int[a.length];
+        c=a;
+        int g=(int)Math.pow(exp,(k-1)); //tens 100
+        int neno=0,neno1=0;
+        //System.out.println(g);
+        int h=g;
+        while(h!=0){
+            for(int z=0;z<a.length;z++){
+                neno1+=c[z]*h;
+                h=h/10; 
+                }
+        }
+        System.out.println("large");
+         System.out.println(neno1);
+            for(int i=0;i<a.length;i++){
+            for(int e=i;e<a.length;e++){
+            if((a[i]>a[e]))
+            {
+                temp=a[i];
+                a[i]=a[e];
+                a[e]=temp;
+            }
+        }
+        }
+        System.out.println("small");
+        while(g!=0){
+            for(int z=0;z<a.length;z++){
+                neno+=a[z]*g;
+                g=g/10; 
+                }
+        }
+        System.out.println(neno);
+        System.out.println("Diff between two no is :"); 
+        System.out.println(neno1-neno);
+    }
+}
