@@ -1,0 +1,11 @@
+package test;
+import java.util.*;
+public class countofwords {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine();
+		String[] news=s.split("\s+");
+		int len=news.length;
+		System.out.print(len);
+	}
+}
