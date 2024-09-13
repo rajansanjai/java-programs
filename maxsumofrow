@@ -1,0 +1,28 @@
+package test;
+import java.util.Scanner;
+public class maxofrow {
+	public static void main(String[] args) {
+			Scanner sc=new Scanner(System.in);
+			int n=sc.nextInt();
+			int[][] arr=new int[n][n];
+			for(int i=0;i<n;i++) {
+				for(int j=0;j<n;j++) {
+					arr[i][j]=sc.nextInt();
+				}
+			}
+			int maxrow=Integer.MIN_VALUE;
+			int count=0;
+			for(int i=0;i<n;i++) {
+				int rowsum=0;
+				for(int j=0;j<n;j++) {
+					rowsum+=arr[i][j];
+				}
+				if(rowsum>maxrow) {
+					maxrow=rowsum;
+					count=i;
+				}
+			}
+			System.out.println(maxrow);
+			System.out.println(count+1);
+	}
+}
